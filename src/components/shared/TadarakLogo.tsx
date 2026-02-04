@@ -1,14 +1,12 @@
 interface TadarakLogoProps {
   size?: 'sm' | 'md' | 'lg';
-  showText?: boolean;
 }
 
-export const TadarakLogo = ({ size = 'lg', showText = true }: TadarakLogoProps) => {
+export const TadarakLogo = ({ size = 'lg' }: TadarakLogoProps) => {
   const sizes = {
     sm: 40,
     md: 60,
     lg: 180,
-    
   };
 
   const iconSize = sizes[size];
@@ -21,17 +19,6 @@ export const TadarakLogo = ({ size = 'lg', showText = true }: TadarakLogoProps) 
         style={{ width: iconSize * 1.5, height: iconSize }}
         className="object-contain"
       />
-
-      {showText && (
-        <div className="text-center">
-          <h1 className={`${size === 'sm' ? 'text-lg' : size === 'md' ? 'text-2xl' : 'text-4xl'} font-bold text-primary tracking-tight`}>
-            Tadarak
-          </h1>
-          <p className="text-primary font-semibold text-lg" style={{ fontFamily: 'serif' }}>
-            تدارك
-          </p>
-        </div>
-      )}
     </div>
   );
 };
